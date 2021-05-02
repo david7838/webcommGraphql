@@ -31,9 +31,9 @@ public class Employee {
    
    private String position;
    
-   private int salary;
+   private Integer salary;
    
-   private int age;
+   private Integer age;
    
    @Column(name = "department_id")
    private Integer departmentId;

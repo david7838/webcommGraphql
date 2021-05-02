@@ -3,6 +3,7 @@ package com.example.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import com.example.dao.EmployeeDao;
@@ -26,6 +27,11 @@ public class EmployeeService {
 	public List<Employee>getAll(){
 		
 		return employeeDao.findAll();
+	}
+	
+	public List<Employee>getAll(Employee employee){
+		
+		return employeeDao.findAll(Example.of(employee));
 	}
 	
 }

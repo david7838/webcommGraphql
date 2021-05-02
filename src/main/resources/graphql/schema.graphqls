@@ -18,6 +18,7 @@ type Department {
     id: ID!
     name: String!
     organization: Organization!
+    employees: [Employee]!
 }
 
 type Organization {
