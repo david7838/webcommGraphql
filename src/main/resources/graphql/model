@@ -1,0 +1,40 @@
+extend type QueryResolver {
+  employees: [Employee]
+  employee(id: ID!): Employee!
+}
+
+input EmployeeInput {
+  firstName: String!
+  lastName: String!
+  position: String!
+  salary: Int
+  age: Int
+  organizationId: Int!
+  departmentId: Int!
+}
+
+type Employee {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  position: String!
+  salary: Int
+  age: Int
+  department: Department
+  organization: Organization
+}
+
+input EmployeeFilter {
+  salary: FilterField
+  age: FilterField
+  position: FilterField
+}
+
+input FilterField {
+  operator: String!
+  value: String!
+}
+
+schema {
+  query: QueryResolver
+}

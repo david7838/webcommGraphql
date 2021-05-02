@@ -1,0 +1,30 @@
+type QueryResolver {
+  employees: [Employee]
+  employee(id: ID!): Employee!
+}
+
+type Employee {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  position: String!
+  salary: Int
+  age: Int
+  department: Department!
+  organization: Organization!
+}
+
+type Department {
+    id: ID!
+    name: String!
+    organization: Organization!
+}
+
+type Organization {
+	id: ID!
+	name: String!
+}
+
+schema {
+  query: QueryResolver
+}
